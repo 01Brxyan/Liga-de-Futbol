@@ -1,0 +1,248 @@
+/* ----- Configuración general ----- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ----- Fondo general ----- */
+body {
+  background: url("img/fondo.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ----- Contenedor principal ----- */
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.92); /* leve transparencia elegante */
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+/* ----- Encabezado ----- */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-liga {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: #222;
+  font-size: 1.8rem;
+}
+
+/* ----- Formulario ----- */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input[type="file"] {
+  border: none;
+  font-size: 0.9rem;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* ----- Sección de equipos ----- */
+.equipos-section {
+  text-align: center;
+}
+
+.encabezados {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+#listaEquipos {
+  list-style: none;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ----- Cada equipo ----- */
+.equipo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background: #fafafa;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.equipo:hover {
+  transform: scale(1.01);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.equipo-nombre {
+  flex: 1;
+  text-align: left;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.equipo-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  margin-left: 10px;
+}
+
+.botones {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.boton-editar {
+  background-color: #ffc107;
+}
+
+.boton-editar:hover {
+  background-color: #e0a800;
+}
+
+.boton-eliminar {
+  background-color: #dc3545;
+}
+
+.boton-eliminar:hover {
+  background-color: #b52a35;
+}
+
+/* ----- Animación de entrada ----- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.equipo {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+/* ----- Responsive móvil ----- */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+    max-width: 95%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .encabezados {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
+
+  .equipo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .equipo-logo {
+    width: 80px;
+    height: 80px;
+    margin: 5px 0;
+  }
+
+  .botones {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  button {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ----- Responsive extra pequeño ----- */
+@media (max-width: 480px) {
+  .logo-liga {
+    width: 80px;
+    height: 80px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .equipo-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .botones button {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .encabezados {
+    justify-content: space-around;
+    font-size: 0.85rem;
+  }
+}
